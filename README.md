@@ -1,6 +1,6 @@
 # PawitTracker ไลบรารี่สำหรับใช้ติดตามรายชื่อคนที่ยังไม่ทำ COVID-19 DAILY REPORT ส่งไปยัง Line Application
 
-PyPi: https://pypi.org/project/PawitTracker/0.2/
+PyPi: https://pypi.org/project/PawitTracker/0.3/
 
 
 ### Generate Line Notify TOKEN
