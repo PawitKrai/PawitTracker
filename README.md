@@ -22,7 +22,7 @@ pip install PawitTracker
 - เปิด IDLE ขึ้นมาแล้วพิมพ์...
 
 ```python
-from PawitTracker import SmartTracker
+from PawitTracker import SmartCovid
 
 g1 = ['Olivia Wilde' , 'Reese Witherspoon' , 'Bruno Mars']
 g2 = [...]
