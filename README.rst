@@ -14,7 +14,7 @@ https://chromedriver.chromium.org/downloads
 เปิด CMD / Terminal
 
 ```python
-pip install oopschool
+pip install PawitTracker
 ```
 
 ### วิธีใช้งานแพ็คเพจนี้
