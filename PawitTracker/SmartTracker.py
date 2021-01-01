@@ -1,13 +1,27 @@
 #SmartTracker.py
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+from bs4 import BeautifulSoup as soup
+from songline import Sendline
+import re
+import datetime
+import schedule
+import requests
+import json
+import urllib.parse
+import sys
+from selenium.webdriver.chrome.options import Options
 
 class SmartCovid:
-    def __init__(self,token,user,password,time_alarm,member):
+    def __init__(self,token,user,password,time_alarm,member,chromedriverpath):
         self.token = token
         self.user = user
         self.password = password
         self.time_alarm = time_alarm
         self.member = member
         self.r = ''
+        self.chromedriverpath = chromedriverpath
 
     #ส่งรูป
     def sendimage(self,textimage):
@@ -45,7 +59,7 @@ class SmartCovid:
         opt.add_argument('window-size=1920x1080')
         opt.add_argument("disable-gpu")
 
-        driver = webdriver.Chrome('C:\\Python37\\chromedriver.exe',options=opt) #webdriver.Chrome('C:\Python37\msedgedriver.exe')
+        driver = webdriver.Chrome(self.chromedriverpath,options=opt) #webdriver.Chrome('C:\Python37\msedgedriver.exe')
         
         try:
             url = 'https://outsystems.pttgcgroup.com/GcSurvey_Report/Entry.aspx'
@@ -215,7 +229,7 @@ class SmartCovid:
                     gg['Other'] = '\nOther\n--------------------------\n'
                     lengg['Other'] = len(gg['Other'])
                     for i in detect_name:
-                        for k,v in Group.items():
+                        for k,v in self.member.items():
                             check = 0
                             if i in v:
                                     gg[k] = gg[k]+ i +'\n'
@@ -265,6 +279,7 @@ class SmartCovid:
         
     def Smarter(self):
         Lo = True
+        self.screenweb()
         while Lo:
             try:
                 Lo = self.Smart()
