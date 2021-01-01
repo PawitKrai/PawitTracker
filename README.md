@@ -32,7 +32,6 @@ g5 = ['Gigi Hadid' , ... , 'Pawit Kraisornnukhor']
 Group = {'PEI-1':g1,'PEI-2':g2,'CMS':g3,'PIP':g4,'MCAS':g5}
 chromedriverpath = 'C:\\Python37\\chromedriver.exe'
 Track = SmartCovid('LINE NOTIFY TOKEN','USER PTTGC','PASSW','TIME_ALARM',Group,chromedriverpath)
-Track.screenweb() #แคปหน้าจอรายงานโควิด ใส่หรือไม่ใส่ก็ได้
 Track.run() #เผื่อ y = ทำเลย n = ตามที่ตั้งเวลา reset = ใส่เวลาใหม่ เช่น '15:29'
 
 
