@@ -2,7 +2,7 @@
 setup(
   name = 'PawitTracker',         # How you named your package folder (MyLib)
   packages = ['PawitTracker'],   # Chose the same as "name"
-  version = '0.5',      # Start with a small number and increase it with every change you make
+  version = '0.6',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Smart Covid-19 Daily Report Tracker',   # Give a short description about your library
   author = 'Pawit Kraisornnukhor',                   # Type in your name

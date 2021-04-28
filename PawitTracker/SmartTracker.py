@@ -118,8 +118,6 @@ class SmartCovid:
                         data = soup(html_data,'html.parser')
                         daily = data.findAll('span',{'style':'font-weight: bold;'}) #ระบุวันที่
                         mem = data.findAll('span',{'style':'font-size: 14px;'}) #ระบุชื่อ
-                        allmember = str(data.findAll('div',{'class':'Counter_Message'})).split() #จำนวนพนักงานทั้งหมดในปัจจุบัน
-                        allmember = max([int(di) for di in allmember if di.isdigit()])
                         html_check = driver.page_source
                         data_check = soup(html_check,'html.parser')
 
@@ -201,7 +199,6 @@ class SmartCovid:
                 except:
                     
                     number = len(detect_name)
-                    percent = (allmember-number)*100/allmember
                     x=datetime.datetime.now()
 
                     #Follow COVID-19 Situation
@@ -216,7 +213,7 @@ class SmartCovid:
                     
                     dmy = time.ctime()[0:len(time.ctime())-5]
                     
-                    aaa = ('\n Time & Date : {}\n Percentage: {:.2f}%\nจำนวนคนที่ยังไม่ทำ Daily Report : {} คน ดังนี้\n'.format(dmy,percent,number))
+                    aaa = ('\n Time & Date : {}\nจำนวนคนที่ยังไม่ทำ Daily Report : {} คน ดังนี้\n'.format(dmy,number))
                    
                     #เก็บค่าจำนวนตัวอักษรเดิม กรณีไม่มีรายชื่อก็ไม่ต้องส่งแผนกนั้น
                     gg = {}
